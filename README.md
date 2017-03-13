@@ -23,7 +23,8 @@ NOTE this fork is specifically for Laravel 5.1 because of how the
 Because this is a fork and not published add it to your `composer.json` like so
 
 ```json
-"repositories": [
+{
+    "repositories": [
         {
             "type": "vcs",
             "url": "https://github.com/khaliqgant/laravel-plain-sqs"
@@ -32,6 +33,7 @@ Because this is a fork and not published add it to your `composer.json` like so
     "require": {
         "dusterio/laravel-plain-sqs": "dev-master"
     }
+}
 
 ```
 
