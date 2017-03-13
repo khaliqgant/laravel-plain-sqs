@@ -5,7 +5,7 @@ namespace Dusterio\PlainSqs\Integrations;
 use Dusterio\PlainSqs\Sqs\Connector;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Queue;
-use Illuminate\Queue\Events\JobProcessed;
+use Illuminate\Contracts\Queue\Job;
 
 /**
  * Class CustomQueueServiceProvider
@@ -24,8 +24,8 @@ class LaravelServiceProvider extends ServiceProvider
             __DIR__ . '/../config/sqs-plain.php' => config_path('sqs-plain.php')
         ]);
 
-        Queue::after(function (JobProcessed $event) {
-            $event->job->delete();
+        Queue::after(function ($connectionName, Job $job) {
+            $job->delete();
         });
     }
 
