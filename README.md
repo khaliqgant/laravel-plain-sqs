@@ -20,20 +20,19 @@ NOTE this fork is specifically for Laravel 5.1 because of how the
 
 ## Installation via Composer
 
-To install simply run:
-
-```
-composer require dusterio/laravel-plain-sqs
-```
-
-Or add it to `composer.json` manually:
+Because this is a fork and not published add it to your `composer.json` like so
 
 ```json
-{
+"repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/khaliqgant/laravel-plain-sqs"
+        }
+    ],
     "require": {
-        "dusterio/laravel-plain-sqs": "~0.1"
+        "dusterio/laravel-plain-sqs": "dev-master"
     }
-}
+
 ```
 
 ### Usage in Laravel 5
